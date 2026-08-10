@@ -1,0 +1,101 @@
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 0 2rem;
+  height: 75px; /* Slightly increased height to accommodate stacked labels */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2.0rem;
+  font-weight: 800;
+  color: #4f46e5;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+
+.searchContainer {
+  flex: 0 1 500px;
+  margin: 0 2rem;
+}
+
+.searchInput {
+  width: 120%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.searchInput:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem; /* Added slightly more gap for stacked layout items */
+}
+
+.navLink {
+  display: flex;
+  flex-direction: column; /* 🚀 Forces icon to stack vertically above the text */
+  align-items: center;     /* Centers the icon relative to the text block below it */
+  justify-content: center;
+  color: #374151;
+  text-decoration: none;
+  font-size: 0.8rem;       /* Reduced font size slightly for professional subtext look */
+  font-weight: 700;
+  gap: 0.25rem;            /* Tiny gap space between the symbol and text */
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: #4f46e5;
+}
+
+.icon {
+  width: 22px;
+  height: 20px;
+  stroke-width: 2px;       /* Gives the vector geometric icon perfect clarity lines */
+}
+
+.userSession {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.username {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #374151;
+}
+
+.logoutButton {
+  background: none;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.logoutButton:hover {
+  background-color: #ef4444;
+  color: #ffffff;
+}
+

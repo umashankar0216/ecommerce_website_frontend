@@ -1,0 +1,86 @@
+
+
+.search-page-container {
+  max-width: 80rem; /* 1280px */
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  min-height: 80vh;
+}
+
+.search-header-section {
+  margin-bottom: 2rem;
+}
+
+.search-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.search-query-highlight {
+  color: #4f46e5;
+}
+
+.search-results-count {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* 2-Column Responsive Layout */
+.search-content-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (min-width: 768px) {
+  .search-content-layout {
+    grid-template-columns: 260px 1fr; /* Sidebar fixed width, grid takes rest */
+  }
+}
+
+/* Products Grid */
+.search-products-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .search-products-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .search-products-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Loading & Empty States */
+.search-loading-box,
+.search-empty-box {
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: #ffffff;
+  border: 1px dashed #d1d5db;
+  border-radius: 0.75rem;
+}
+
+.search-loading-text,
+.search-empty-text {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.search-error-box {
+  padding: 1rem;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fee2e2;
+  border-radius: 0.5rem;
+}

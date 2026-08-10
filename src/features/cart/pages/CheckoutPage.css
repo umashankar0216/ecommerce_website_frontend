@@ -1,0 +1,487 @@
+.checkout-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  min-height: 85vh;
+}
+
+.checkout-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 1024px) {
+  .checkout-layout {
+    grid-template-columns: 1.7fr 1.3fr;
+  }
+}
+
+/* Sections Styling */
+.checkout-section {
+  background: white;
+  border-radius: 1.25rem;
+  border: 1px solid #e5e7eb;
+  padding: 2.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.checkout-section-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Address List Grid */
+.addresses-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .addresses-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.address-card {
+  border: 2px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.25s ease;
+}
+
+.address-card:hover {
+  border-color: #a5b4fc;
+}
+
+.address-card.selected {
+  border-color: #4f46e5;
+  background-color: #f5f3ff;
+}
+
+.address-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.address-name {
+  font-weight: 700;
+  color: #111827;
+}
+
+.badge-default {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: #e0e7ff;
+  color: #4338ca;
+  padding: 0.15rem 0.4rem;
+  border-radius: 0.25rem;
+  text-transform: uppercase;
+}
+
+.address-details {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.4;
+}
+
+.address-phone {
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #6b7280;
+}
+
+.btn-add-address-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px dashed #d1d5db;
+  border-radius: 0.75rem;
+  background: none;
+  font-weight: 600;
+  color: #4b5563;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-address-trigger:hover {
+  border-color: #4f46e5;
+  color: #4f46e5;
+  background-color: #f9fafb;
+}
+
+/* Address Form Styling */
+.address-form-drawer {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+  .full-width-field {
+    grid-column: span 2;
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.btn-cancel {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-cancel:hover {
+  background-color: #e5e7eb;
+}
+
+.btn-save-address {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #4f46e5;
+  color: white;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-save-address:hover {
+  background-color: #4338ca;
+}
+
+/* Credit Card Form & Mock Design */
+.payment-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.credit-card-mock {
+  width: 100%;
+  max-width: 22rem;
+  height: 13rem;
+  margin: 0 auto 1.5rem auto;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+  z-index: 2;
+}
+
+.card-back {
+  background: linear-gradient(135deg, #311042 0%, #1e1b4b 100%);
+  transform: rotateY(180deg);
+}
+
+.card-header-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chip-icon {
+  width: 2.25rem;
+  height: 1.75rem;
+  background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+  border-radius: 0.25rem;
+  position: relative;
+}
+
+.chip-lines {
+  position: absolute;
+  inset: 0.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0.15rem;
+}
+
+.card-brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.05em;
+  opacity: 0.85;
+}
+
+.card-number-display {
+  font-size: 1.35rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.card-holder-expiry {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-info-lbl {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: #94a3b8;
+  margin-bottom: 0.2rem;
+  letter-spacing: 0.05em;
+}
+
+.card-info-val {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+}
+
+.card-magnetic-strip {
+  height: 2.5rem;
+  background-color: #111827;
+  margin: 0.5rem -1.5rem 0 -1.5rem;
+}
+
+.card-signature-cvc {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 1rem;
+}
+
+.signature-strip {
+  width: 70%;
+  height: 2rem;
+  background-color: #f3f4f6;
+  border-radius: 0.25rem;
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: #1f2937;
+  font-style: italic;
+}
+
+/* Pay Loader / Processing Overlay */
+.pay-loader-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(17, 24, 39, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.loader-card {
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 24rem;
+  width: 90%;
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.spinner-ring {
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 4px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1.5rem;
+}
+
+.loader-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.5rem;
+}
+
+.loader-desc {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* Success Confirmation Screen */
+.success-screen {
+  max-width: 36rem;
+  margin: 4rem auto;
+  background: white;
+  border-radius: 1.5rem;
+  border: 1px solid #e5e7eb;
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  animation: scaleUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.success-icon-badge {
+  width: 4.5rem;
+  height: 4.5rem;
+  background-color: #ecfdf5;
+  color: #10b981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.15);
+  animation: bounceSuccess 1.2s ease infinite alternate;
+}
+
+.success-title {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 0.75rem;
+}
+
+.success-message {
+  color: #6b7280;
+  line-height: 1.5;
+  margin-bottom: 2.25rem;
+}
+
+.order-metadata-card {
+  background-color: #f9fafb;
+  border: 1px solid #f3f4f6;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.metadata-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.metadata-row:last-child {
+  margin-bottom: 0;
+}
+
+.metadata-lbl {
+  color: #6b7280;
+}
+
+.metadata-val {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.btn-success-action {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+  color: white;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  text-decoration: none;
+  box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.2);
+  transition: all 0.2s ease;
+}
+
+.btn-success-action:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Animations */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes bounceSuccess {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
