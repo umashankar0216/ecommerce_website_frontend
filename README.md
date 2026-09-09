@@ -1,18 +1,43 @@
-# React + Vite
+# E-Commerce Platform - Client Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive e-commerce web application built with React and Vite. It features dynamic storefront browsing, interactive product search and filtering, user session management, a persistent cart, and a dedicated administrative management dashboard.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Authentication & Profile:** Registration, user login, profile management, and multiple shipping address handling.
+- **Product Discovery & Catalog:** Dynamic category carousels, specification-driven product search, category filtering, and single-product detail views.
+- **Shopping Cart & Checkout:** Persistent shopping cart, real-time inventory checks, and an interactive payment gateway integration using Stripe.
+- **Order Management:** Order placement history tracking, order cancellation options, and product review submission capabilities.
+- **Admin Management Dashboard:** Dedicated protected dashboard featuring sidebar navigation for product catalog management, category creation, and stock updates.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- React
+- Vite
+- React Router DOM
+- Axios
+- Tailwind CSS / CSS Modules
+- Lucide React Icons
 
-Note: This will impact Vite dev & build performances.
+## Architecture / How It Works
 
-## Expanding the Oxlint configuration
+Client Application (React) → Axios Client with Interceptors → REST API (Spring Boot)
+                                                                ↓
+                                                     Supabase Auth / JWT Session
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+The application is structured using a **Feature-Driven Modular Architecture**. Business domains (Auth, Catalog, Cart, Orders, Admin) encapsulate their own pages, components, and local state. Public routes (storefront) and protected routes (admin dashboard) use specialized outer layout wrappers for navigation isolation. Network communications are centralized through an Axios client with automated interceptors for dynamic JWT injection.
+
+## Key Engineering Concepts
+
+- **Feature-Driven Modular Architecture:** Isolates components and domain logic into self-contained feature capsules (e.g., `features/catalog`, `features/cart`).
+- **Encapsulated Boundaries:** Uses module-level `index.js` files as encapsulation barriers to keep internal components private and maintainable.
+- **State Management & Routing:** Leverages React Context API (`AuthContext`) for global auth status and React Router DOM (`createBrowserRouter`, `<Outlet>`) for dynamic navigation.
+- **Modular Styling:** Component-isolated CSS Modules and Tailwind CSS prevent style leakage across routes.
+
+## Setup & Installation
+
+```bash
+git clone <frontend-repository-url>
+cd <frontend-project-folder>
+npm install
+npm run dev
